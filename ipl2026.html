@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IPL 2026 Schedule, Teams, Matches & News - CricketZone24</title>
+<meta name="description" content="Complete IPL 2026 schedule, all 84 matches, 10 teams, venues, captains and latest news. TATA IPL 2026 from March 28 to May 31.">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .ipl-hero {
+    background: linear-gradient(135deg, #e63946, #ffd166, #e63946);
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+    padding: 48px 0;
+    text-align: center;
+    color: white;
+  }
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .ipl-hero h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 52px;
+    font-weight: 800;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  .ipl-hero p {
+    font-size: 18px;
+    margin-top: 8px;
+    opacity: 0.95;
+    font-weight: 600;
+  }
+  .ipl-stats-bar {
+    background: #1a1a2e;
+    padding: 16px 0;
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+  .ipl-stat {
+    text-align: center;
+    color: white;
+  }
+  .ipl-stat-num {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #e63946, #ffd166);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .ipl-stat-label {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 2px;
+  }
+  .team-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid var(--border);
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .team-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+  }
+  .team-emoji { font-size: 40px; margin-bottom: 10px; }
+  .team-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+  }
+  .team-captain {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+  .team-home {
+    font-size: 11px;
+    color: var(--secondary);
+    margin-top: 4px;
+    font-weight: 600;
+  }
+  .teams-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .match-row {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    gap: 16px;
+    transition: background 0.2s;
+  }
+  .match-row:hover { background: var(--surface2); }
+  .match-num {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #e63946, #f72585);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+  .match-teams-ipl {
+    flex: 1;
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .match-vs {
+    color: var(--primary);
+    font-weight: 800;
+  }
+  .match-date-col {
+    text-align: right;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .match-time-col {
+    color: var(--secondary);
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .venue-badge {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+  .section-heading {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    position: relative;
+    display: inline-block;
+  }
+  .section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #e63946, #ffd166);
+    border-radius: 2px;
+  }
+  .phase-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 16px;
+  }
+  .phase-1 { background: rgba(230,57,70,0.15); color: #e63946; }
+  .news-ipl-card {
+    background: var(--surface);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: all 0.28s;
+    cursor: pointer;
+  }
+  .news-ipl-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  .news-ipl-img {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+  }
+  .news-ipl-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+  }
+  @media (max-width: 768px) {
+    .teams-grid { grid-template-columns: repeat(2, 1fr); }
+    .news-ipl-grid { grid-template-columns: 1fr; }
+    .ipl-hero h1 { font-size: 32px; }
+    .ipl-stats-bar { gap: 24px; }
+    .match-row { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">🏏</span>
+        <span class="logo-text">CricketZone24</span>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="ipl2026.html" class="active">IPL 2026</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- IPL HERO BANNER -->
+<div class="ipl-hero">
+  <div class="container">
+    <div style="font-size:16px;font-weight:700;
+                letter-spacing:2px;opacity:0.9;
+                margin-bottom:8px">
+      TATA IPL 2026 • 19th Edition
+    </div>
+    <h1>🏆 IPL 2026</h1>
+    <p>March 28 — May 31, 2026 • 84 Matches • 10 Teams</p>
+    <p style="margin-top:8px;font-size:14px;opacity:0.85">
+      Defending Champions: Royal Challengers Bengaluru 🏆
+    </p>
+    <div style="margin-top:20px">
+      <span style="background:rgba(255,255,255,0.2);
+                   padding:8px 20px;border-radius:24px;
+                   font-weight:800;font-size:14px;
+                   border:2px solid rgba(255,255,255,0.4)">
+        🔴 STARTS MARCH 28, 2026
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="ipl-stats-bar">
+  <div class="ipl-stat">
+    <div class="ipl-stat-num">84</div>
+    <div class="ipl-stat-label">Total Matches</div>
+  </div>
+  <div class="ipl-stat">
+    <div class="ipl-stat-num">10</div>
+    <div class="ipl-stat-label">Teams</div>
+  </div>
+  <div class="ipl-stat">
+    <div class="ipl-stat-num">65</div>
+    <div class="ipl-stat-label">Days</div>
+  </div>
+  <div class="ipl-stat">
+    <div class="ipl-stat-num">18</div>
+    <div class="ipl-stat-label">Venues</div>
+  </div>
+  <div class="ipl-stat">
+    <div class="ipl-stat-num">19th</div>
+    <div class="ipl-stat-label">Edition</div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="main-content">
+<div class="container">
+
+  <!-- AD SLOT TOP -->
+  <div class="ad-slot ad-banner">
+    <!-- Google AdSense Banner -->
+  </div>
+
+  <!-- ALL 10 TEAMS -->
+  <section class="section">
+    <h2 class="section-heading">🏏 IPL 2026 Teams</h2>
+    <p style="color:var(--text-muted);margin-top:10px;
+              margin-bottom:4px">
+      All 10 teams returning for the 19th edition
+    </p>
+    <div class="teams-grid">
+
+      <div class="team-card"
+           style="border-color:#e63946;
+                  background:linear-gradient(135deg,
+                  #fff5f5,#ffffff)">
+        <div class="team-emoji">🔴</div>
+        <div class="team-name" style="color:#e63946">
+          Royal Challengers Bengaluru
+        </div>
+        <div class="team-captain">🏆 Defending Champions</div>
+        <div class="team-home">🏟️ M. Chinnaswamy Stadium</div>
+        <div style="margin-top:8px;font-size:11px;
+                    background:#e63946;color:white;
+                    padding:2px 8px;border-radius:10px;
+                    display:inline-block">
+          RCB
+        </div>
+      </div>
+
+      <div class="team-card"
+           style="border-color:#004BA0;
+                  background:linear-gradient(135deg,
+                  #f0f5ff,#ffffff)">
+        <div class="team-emoji">💙</div>
+        <div class="team-name" style="color:#004BA0">
+          Mumbai Indians
+        </div>
+        <div class="team-captain">👑 Most IPL Titles (5)</div>
+        <div class="team-home">🏟️ Wankhede Stadium</div>
+        <div style="margin-top:8px;font-size:11px;
+                    background:#004BA0;color:white;
+                    padding:2px 8px;border-radius:10px;
+                    display:inline-block">
+          MI
+        </div>
+      </div>
+
+      <div class="team-card"
+           style="border-color:#F9CD05;
+                  background:linear-gradient(135deg,
+                  #fffdf0,#ffffff)">
+        <div class="team-emoji">💛</div>
+        <div class="team-name" style="color:#c8a200">
+          Chennai Super Kings
+        </div>
+        <div class="team-captain">4x Champions</div>
+        <div class="team-home">🏟️ MA Chidambaram Stadium</div>
+        <div style="margin-top:8px;font-size:11px;
+                    background:#F9CD05;color:#333;
+                    padding:2px 8px;border-radius:10px;
+                    display:inline-block">
+          CSK
+        </div>
+      </div>
+
+      <div class="team-card"
+           style="border-color:#3A225D;
+                  background:linear-gradient(135deg,
+                  #f8f0ff,#ffffff)">
+        <div class="team-emoji">🟣</div>
+        <div class="team-name" style="color:#3A225D">
+          Kolkata Knight Riders
+        </div>
+        <div class="team-captain">3x Champions</div>
+        <div class="team-home">🏟️ Eden Gardens</div>
+        <div style="margin-top:8px;font-size:11px;
+                    background:#3A225D;color:white;
+                    padding:2px 8px;border-radius:10px;
+                    display:inline-block">
+          KKR
+        </div>
+      </div>
+
+      <div class="team-card"
+           style="border-color:#FF69B4;
+                  background:linear-gradient(135deg,
+                  #fff0f8,#ffffff)">
+        <div class="team-emoji">🩷</div>
+        <div class="team-name" style="color:#FF69B4">
+          Punjab Kings
+        </div>
+        <div class="team-captain">Captain: Shreyas Iyer</div>
+        <div class="team-home">🏟️ PCA Stadium, Chandigarh</div>
+        <div style="margin-top:8px;font-size:11px;
+                    background:#FF69B4;color:white;
+                    padding:2px 8px;border-radius:10px;
+                    display:inline-block">
+          PBKS
+        </div>
+      </div>
+
+      <div class="team-card"
+           style="border-color:#254AA5;
+                  background:linear-gradient(135deg,
+                  #f0f4ff,#ffffff)">
+        <div class="team-emoji">🔵</div>
+        <div class="team-name" style="color:#254AA5">
+          Delhi Capitals
+        </div>
+        <div class="team-captain">Captain: Axar Patel</div>
+        <div class="team-home">🏟️ Arun Jaitley Stadium</div>
+        <div style="margin-top:8px;font-size:11px;
+                    background:#254AA5;color:white;
+                    padding:2px 8px;border-radius:10px;
+                    display:inline-block">
+          DC
+        </div>
+      </div>
+
+      <div class="team-card"
+           style="border-color:#FF822A;
+                  background:linear-gradient(135deg,
+                  #fff8f0,#ffffff)">
+        <div class="team-emoji">🟠</div>
+        <div class="team-name" style="color:#FF822A">
+          Sunrisers Hyderabad
+        </div>
+        <div class="team-captain">Captain: Pat Cummins</div>
+        <div class="team-home">🏟️ Rajiv Gandhi Intl. Stadium</div>
+        <div style="margin-top:8px;font-size:11px;
+                    background:#FF822A;color:white;
+                    padding:2px 8px;border-radius:10px;
+                    display:inline-block">
+          SRH
+        </div>
+      </div>
+
+      <div class="team-card"
+           style="border-color:#FF1744;
+                  background:linear-gradient(135deg,
+                  #fff0f0,#ffffff)">
+        <div class="team-emoji">🩵</div>
+        <div class="team-name" style="color:#FF1744">
+          Rajasthan Royals
+        </div>
+        <div class="team-captain">Captain: Riyan Parag</div>
+        <div class="team-home">🏟️ Sawai Mansingh Stadium</div>
+        <div style="margin-top:8px;font-size:11px;
+                    background:#FF1744;color:white;
+                    padding:2px 8px;border-radius:10px;
+                    display:inline-block">
+          RR
+        </div>
+      </div>
+
+      <div class="team-card"
+           style="border-color:#00ACC1;
+                  background:linear-gradient(135deg,
+                  #f0fbff,#ffffff)">
+        <div class="team-emoji">🔵</div>
+        <div class="team-name" style="color:#00ACC1">
+          Gujarat Titans
+        </div>
+        <div class="team-captain">Captain: Shubman Gill</div>
+        <div class="team-home">🏟️ Narendra Modi Stadium</div>
+        <div style="margin-top:8px;font-size:11px;
+                    background:#00ACC1;color:white;
+                    padding:2px 8px;border-radius:10px;
+                    display:inline-block">
+          GT
+        </div>
+      </div>
+
+      <div class="team-card"
+           style="border-color:#A3C954;
+                  background:linear-gradient(135deg,
+                  #f5fff0,#ffffff)">
+        <div class="team-emoji">🟢</div>
+        <div class="team-name" style="color:#5a8a00">
+          Lucknow Super Giants
+        </div>
+        <div class="team-captain">Captain: KL Rahul</div>
+        <div class="team-home">🏟️ BRSABV Ekana Stadium</div>
+        <div style="margin-top:8px;font-size:11px;
+                    background:#A3C954;color:#333;
+                    padding:2px 8px;border-radius:10px;
+                    display:inline-block">
+          LSG
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AD SLOT MIDDLE -->
+  <div class="ad-slot ad-horizontal">
+    <!-- Google AdSense Ad -->
+  </div>
+
+  <!-- MATCH SCHEDULE -->
+  <section class="section">
+    <h2 class="section-heading">📅 IPL 2026 Schedule</h2>
+    <p style="color:var(--text-muted);margin-top:10px">
+      First phase: March 28 – April 12, 2026 (20 matches)
+    </p>
+
+    <div style="background:var(--surface);border-radius:16px;
+                border:1px solid var(--border);
+                overflow:hidden;margin-top:16px;
+                box-shadow:var(--shadow)">
+
+      <div style="background:linear-gradient(135deg,#e63946,#ffd166);
+                  padding:14px 20px;color:white">
+        <span style="font-family:'Rajdhani',sans-serif;
+                     font-size:18px;font-weight:800">
+          🏆 PHASE 1 — March 28 to April 12
+        </span>
+      </div>
+
+      <!-- MATCH ROWS -->
+      <div class="match-row">
+        <div class="match-num">1</div>
+        <div class="match-teams-ipl">
+          🔴 RCB <span class="match-vs">vs</span> 🟠 SRH
+        </div>
+        <div class="match-date-col">
+          <div class="match-time-col">7:30 PM IST</div>
+          <div>March 28, 2026</div>
+          <div class="venue-badge">
+            🏟️ M. Chinnaswamy, Bengaluru
+          </div>
+        </div>
+      </div>
+
+      <div class="match-row">
+        <div class="match-num">2</div>
+        <div class="match-teams-ipl">
+          💙 MI <span class="match-vs">vs</span> 🟣 KKR
+        </div>
+        <div class="match-date-col">
+          <div class="match-time-col">7:30 PM IST</div>
+          <div>March 29, 2026</div>
+          <div class="venue-badge">🏟️ Wankhede, Mumbai</div>
+        </div>
+      </div>
+
+      <div class="match-row">
+        <div class="match-num">3</div>
+        <div class="match-teams-ipl">
+          🩵 RR <span class="match-vs">vs</span> 💛 CSK
+        </div>
+        <div class="match-date-col">
+          <div class="match-time-col">7:30 PM IST</div>
+          <div>March 30, 2026</div>
+          <div class="venue-badge">🏟️ Guwahati</div>
+        </div>
+      </div>
+
+      <div class="match-row">
+        <div class="match-num">4</div>
+        <div class="match-teams-ipl">
+          🩷 PBKS <span class="match-vs">vs</span> 🔵 GT
+        </div>
+        <div class="match-date-col">
+          <div class="match-time-col">7:30 PM IST</div>
+          <div>March 31, 2026</div>
+          <div class="venue-badge">🏟️ PCA Stadium, Chandigarh</div>
+        </div>
+      </div>
+
+      <div class="match-row">
+        <div class="match-num">5</div>
+        <div class="match-teams-ipl">
+          🟢 LSG <span class="match-vs">vs</span> 🔵 DC
+        </div>
+        <div class="match-date-col">
+          <div class="match-time-col">7:30 PM IST</div>
+          <div>April 1, 2026</div>
+          <div class="venue-badge">🏟️ Ekana Stadium, Lucknow</div>
+        </div>
+      </div>
+
+      <div class="match-row">
+        <div class="match-num">6</div>
+        <div class="match-teams-ipl">
+          🟣 KKR <span class="match-vs">vs</span> 🟠 SRH
+        </div>
+        <div class="match-date-col">
+          <div class="match-time-col">7:30 PM IST</div>
+          <div>April 2, 2026</div>
+          <div class="venue-badge">🏟️ Eden Gardens, Kolkata</div>
+        </div>
+      </div>
+
+      <div class="match-row">
+        <div class="match-num">7</div>
+        <div class="match-teams-ipl">
+          💛 CSK <span class="match-vs">vs</span> 🩷 PBKS
+        </div>
+        <div class="match-date-col">
+          <div class="match-time-col">7:30 PM IST</div>
+          <div>April 3, 2026</div>
+          <div class="venue-badge">
+            🏟️ MA Chidambaram, Chennai
+          </div>
+        </div>
+      </div>
+
+      <div class="match-row"
+           style="background:rgba(230,57,70,0.04)">
+        <div class="match-num"
+             style="background:linear-gradient(135deg,
+                    #ffd166,#e63946)">
+          DH
+        </div>
+        <div style="flex:1">
+          <div style="font-size:11px;color:#e63946;
+                      font-weight:800;margin-bottom:6px">
+            🌟 DOUBLE HEADER — April 4
+          </div>
+          <div class="match-teams-ipl">
+            🔵 DC <span class="match-vs">vs</span> 💙 MI
+          </div>
+          <div style="margin-top:6px" class="match-teams-ipl">
+            🔵 GT <span class="match-vs">vs</span> 🩵 RR
+          </div>
+        </div>
+        <div class="match-date-col">
+          <div class="match-time-col">3:30 PM & 7:30 PM</div>
+          <div>April 4, 2026</div>
+          <div class="venue-badge">
+            Delhi & Ahmedabad
+          </div>
+        </div>
+      </div>
+
+      <div class="match-row">
+        <div class="match-num">10</div>
+        <div class="match-teams-ipl">
+          🟠 SRH <span class="match-vs">vs</span> 🟢 LSG
+        </div>
+        <div class="match-date-col">
+          <div class="match-time-col">7:30 PM IST</div>
+          <div>April 5, 2026</div>
+          <div class="venue-badge">🏟️ Hyderabad</div>
+        </div>
+      </div>
+
+      <div class="match-row">
+        <div class="match-num">11</div>
+        <div class="match-teams-ipl">
+          🔴 RCB <span class="match-vs">vs</span> 💛 CSK
+        </div>
+        <div class="match-date-col">
+          <div class="match-time-col">7:30 PM IST</div>
+          <div>April 6, 2026</div>
+          <div class="venue-badge">🏟️ Bengaluru</div>
+        </div>
+      </div>
+
+      <!-- See more button -->
+      <div style="padding:16px;text-align:center;
+                  background:var(--surface2)">
+        <a href="https://www.iplt20.com/matches/fixtures"
+           target="_blank"
+           style="background:linear-gradient(135deg,#e63946,#ffd166);
+                  color:white;padding:10px 28px;
+                  border-radius:24px;font-weight:800;
+                  font-size:14px;display:inline-block">
+          View Full Schedule (84 Matches) →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAYOFFS -->
+  <section class="section">
+    <h2 class="section-heading">🏆 Playoff Format</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);
+                gap:16px;margin-top:20px">
+      <div style="background:var(--surface);border-radius:16px;
+                  padding:20px;text-align:center;
+                  border:2px solid #e63946;
+                  box-shadow:var(--shadow)">
+        <div style="font-size:28px">1️⃣</div>
+        <div style="font-family:'Rajdhani',sans-serif;
+                    font-size:16px;font-weight:800;
+                    margin-top:8px">Qualifier 1</div>
+        <div style="font-size:12px;color:var(--text-muted);
+                    margin-top:6px">
+          1st vs 2nd<br>Winner → Final
+        </div>
+      </div>
+      <div style="background:var(--surface);border-radius:16px;
+                  padding:20px;text-align:center;
+                  border:2px solid #4361ee;
+                  box-shadow:var(--shadow)">
+        <div style="font-size:28px">⚡</div>
+        <div style="font-family:'Rajdhani',sans-serif;
+                    font-size:16px;font-weight:800;
+                    margin-top:8px">Eliminator</div>
+        <div style="font-size:12px;color:var(--text-muted);
+                    margin-top:6px">
+          3rd vs 4th<br>Loser Eliminated
+        </div>
+      </div>
+      <div style="background:var(--surface);border-radius:16px;
+                  padding:20px;text-align:center;
+                  border:2px solid #2ec4b6;
+                  box-shadow:var(--shadow)">
+        <div style="font-size:28px">2️⃣</div>
+        <div style="font-family:'Rajdhani',sans-serif;
+                    font-size:16px;font-weight:800;
+                    margin-top:8px">Qualifier 2</div>
+        <div style="font-size:12px;color:var(--text-muted);
+                    margin-top:6px">
+          Eliminator Winner<br>vs Q1 Loser
+        </div>
+      </div>
+      <div style="background:linear-gradient(135deg,
+                  #e63946,#ffd166);
+                  border-radius:16px;padding:20px;
+                  text-align:center;color:white;
+                  box-shadow:var(--shadow-md)">
+        <div style="font-size:28px">🏆</div>
+        <div style="font-family:'Rajdhani',sans-serif;
+                    font-size:16px;font-weight:800;
+                    margin-top:8px">FINAL</div>
+        <div style="font-size:12px;opacity:0.9;margin-top:6px">
+          May 31, 2026<br>Bengaluru
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IPL 2026 NEWS -->
+  <section class="section">
+    <h2 class="section-heading">📰 IPL 2026 News</h2>
+    <div class="news-ipl-grid" id="iplNewsGrid">
+
+      <div class="news-ipl-card"
+           onclick="window.open('https://www.iplt20.com','_blank')">
+        <div class="news-ipl-img"
+             style="background:linear-gradient(135deg,
+                    #e63946,#ffd166)">
+          🏆
+        </div>
+        <div style="padding:14px">
+          <span class="news-tag">OFFICIAL</span>
+          <h3 class="news-title">
+            BCCI announces IPL 2026 schedule —
+            RCB vs SRH opens tournament on March 28
+          </h3>
+          <div class="news-meta">
+            <span>BCCI Official</span>
+            <span>March 11, 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="news-ipl-card"
+           onclick="window.open('https://www.espncricinfo.com/series/ipl-2026-1510719','_blank')">
+        <div class="news-ipl-img"
+             style="background:linear-gradient(135deg,
+                    #4361ee,#7209b7)">
+          🔴
+        </div>
+        <div style="padding:14px">
+          <span class="news-tag"
+                style="background:rgba(67,97,238,0.15);
+                       color:#4361ee">TEAMS</span>
+          <h3 class="news-title">
+            RCB defend title — Virat Kohli leads
+            defending champions into IPL 2026
+          </h3>
+          <div class="news-meta">
+            <span>ESPNcricinfo</span>
+            <span>Latest</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="news-ipl-card"
+           onclick="window.open('https://www.iplt20.com/news/announcements','_blank')">
+        <div class="news-ipl-img"
+             style="background:linear-gradient(135deg,
+                    #2ec4b6,#06d6a0)">
+          📋
+        </div>
+        <div style="padding:14px">
+          <span class="news-tag"
+                style="background:rgba(46,196,182,0.15);
+                       color:#03a678">AUCTION</span>
+          <h3 class="news-title">
+            IPL 2026 Auction complete —
+            full list of players sold and retained
+          </h3>
+          <div class="news-meta">
+            <span>IPL Official</span>
+            <span>Dec 2025</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="news-ipl-card"
+           onclick="window.open('https://www.iplt20.com','_blank')">
+        <div class="news-ipl-img"
+             style="background:linear-gradient(135deg,
+                    #8338ec,#3a0ca3)">
+          🏏
+        </div>
+        <div style="padding:14px">
+          <span class="news-tag"
+                style="background:rgba(131,56,236,0.15);
+                       color:#8338ec">TRADE</span>
+          <h3 class="news-title">
+            Jadeja moves to RR, Samson to CSK —
+            biggest trades of IPL 2026 season
+          </h3>
+          <div class="news-meta">
+            <span>IPL Official</span>
+            <span>Nov 2025</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="news-ipl-card"
+           onclick="window.open('https://sports.yahoo.com/articles/ipl-2026-team-wise-full-221600361.html','_blank')">
+        <div class="news-ipl-img"
+             style="background:linear-gradient(135deg,
+                    #f4a261,#e76f51)">
+          📅
+        </div>
+        <div style="padding:14px">
+          <span class="news-tag"
+                style="background:rgba(244,162,97,0.15);
+                       color:#c9600a">SCHEDULE</span>
+          <h3 class="news-title">
+            IPL 2026 team-wise full schedule —
+            complete match list dates and venues
+          </h3>
+          <div class="news-meta">
+            <span>Yahoo Sports</span>
+            <span>Latest</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="news-ipl-card"
+           onclick="window.open('https://www.espncricinfo.com/series/ipl-2026-1510719','_blank')">
+        <div class="news-ipl-img"
+             style="background:linear-gradient(135deg,
+                    #f72585,#b5179e)">
+          💰
+        </div>
+        <div style="padding:14px">
+          <span class="news-tag"
+                style="background:rgba(247,37,133,0.15);
+                       color:#f72585">SPONSORS</span>
+          <h3 class="news-title">
+            TATA Group renews IPL title sponsorship
+            for ₹2500 crore for 2024–2028 period
+          </h3>
+          <div class="news-meta">
+            <span>ESPNcricinfo</span>
+            <span>Latest</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Live news from API -->
+    <div id="iplLiveNews" style="margin-top:16px"></div>
+  </section>
+
+  <!-- VENUES -->
+  <section class="section">
+    <h2 class="section-heading">🏟️ IPL 2026 Venues</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);
+                gap:14px;margin-top:20px">
+      <div style="background:var(--surface);border-radius:12px;
+                  padding:16px;border:1px solid var(--border);
+                  display:flex;align-items:center;gap:12px">
+        <span style="font-size:28px">🏟️</span>
+        <div>
+          <div style="font-weight:700">M. Chinnaswamy Stadium</div>
+          <div style="font-size:12px;color:var(--text-muted)">
+            Bengaluru • RCB Home
+          </div>
+        </div>
+      </div>
+      <div style="background:var(--surface);border-radius:12px;
+                  padding:16px;border:1px solid var(--border);
+                  display:flex;align-items:center;gap:12px">
+        <span style="font-size:28px">🏟️</span>
+        <div>
+          <div style="font-weight:700">Wankhede Stadium</div>
+          <div style="font-size:12px;color:var(--text-muted)">
+            Mumbai • MI Home
+          </div>
+        </div>
+      </div>
+      <div style="background:var(--surface);border-radius:12px;
+                  padding:16px;border:1px solid var(--border);
+                  display:flex;align-items:center;gap:12px">
+        <span style="font-size:28px">🏟️</span>
+        <div>
+          <div style="font-weight:700">Eden Gardens</div>
+          <div style="font-size:12px;color:var(--text-muted)">
+            Kolkata • KKR Home
+          </div>
+        </div>
+      </div>
+      <div style="background:var(--surface);border-radius:12px;
+                  padding:16px;border:1px solid var(--border);
+                  display:flex;align-items:center;gap:12px">
+        <span style="font-size:28px">🏟️</span>
+        <div>
+          <div style="font-weight:700">MA Chidambaram Stadium</div>
+          <div style="font-size:12px;color:var(--text-muted)">
+            Chennai • CSK Home
+          </div>
+        </div>
+      </div>
+      <div style="background:var(--surface);border-radius:12px;
+                  padding:16px;border:1px solid var(--border);
+                  display:flex;align-items:center;gap:12px">
+        <span style="font-size:28px">🏟️</span>
+        <div>
+          <div style="font-weight:700">Narendra Modi Stadium</div>
+          <div style="font-size:12px;color:var(--text-muted)">
+            Ahmedabad • GT Home
+          </div>
+        </div>
+      </div>
+      <div style="background:var(--surface);border-radius:12px;
+                  padding:16px;border:1px solid var(--border);
+                  display:flex;align-items:center;gap:12px">
+        <span style="font-size:28px">🏟️</span>
+        <div>
+          <div style="font-weight:700">Arun Jaitley Stadium</div>
+          <div style="font-size:12px;color:var(--text-muted)">
+            Delhi • DC Home
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">🏏 CricketZone24</div>
+        <p>Your #1 destination for IPL 2026 scores, news and updates.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading">IPL 2026</div>
+        <a href="#">Schedule</a>
+        <a href="#">Teams</a>
+        <a href="#">Points Table</a>
+        <a href="#">Top Scorers</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading">Quick Links</div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading">Follow Us</div>
+        <a href="#">Twitter/X</a>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">Telegram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 CricketZone24. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Load IPL live news from NewsAPI
+const NEWS_KEY = 'YOUR_NEWSAPI_KEY_HERE';
+
+async function loadIPLNews() {
+  try {
+    const res = await fetch(
+      `https://newsapi.org/v2/everything?q=IPL+2026&sortBy=publishedAt&language=en&pageSize=3&apiKey=${NEWS_KEY}`
+    );
+    const json = await res.json();
+    if (!json.articles || json.articles.length === 0) return;
+
+    const colors = [
+      'linear-gradient(135deg,#e63946,#ffd166)',
+      'linear-gradient(135deg,#4361ee,#7209b7)',
+      'linear-gradient(135deg,#2ec4b6,#06d6a0)',
+    ];
+
+    document.getElementById('iplLiveNews').innerHTML = `
+      <h3 style="font-family:'Rajdhani',sans-serif;
+                 font-size:18px;font-weight:700;
+                 margin-bottom:14px;color:var(--primary)">
+        🔴 Latest IPL News
+      </h3>
+      <div style="display:grid;grid-template-columns:
+                  repeat(3,1fr);gap:14px">
+        ${json.articles.slice(0, 3).map((a, i) => `
+          <div class="news-ipl-card"
+               onclick="window.open('${a.url}','_blank')">
+            <div class="news-ipl-img"
+                 style="background:${colors[i]};height:120px">
+              🏏
+            </div>
+            <div style="padding:12px">
+              <span class="news-tag">LIVE NEWS</span>
+              <h3 class="news-title" style="font-size:13px">
+                ${a.title}
+              </h3>
+              <div class="news-meta">
+                <span>${a.source?.name || 'News'}</span>
+                <span>${new Date(a.publishedAt)
+                  .toLocaleDateString('en-IN')}</span>
+              </div>
+            </div>
+          </div>`).join('')}
+      </div>`;
+  } catch (e) {
+    console.log('News load error:', e);
+  }
+}
+
+loadIPLNews();
+</script>
+
+</body>
+</html>
