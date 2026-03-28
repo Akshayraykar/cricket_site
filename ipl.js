@@ -3,7 +3,7 @@
 // ============================================
 
 // ===== API KEYS =====
-const CRIC_KEY = 'YOUR_CRICAPI_KEY_HERE';
+const CRIC_KEY = 'b70cc52a-4fdd-4758-88ae-af66d4c6063f';
 const NEWS_KEY = 'YOUR_NEWSAPI_KEY_HERE';
 
 // ===== COUNTDOWN TIMER =====
